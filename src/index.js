@@ -23,6 +23,7 @@ fetchBreeds(axios)
     return res.json();
   })
   .then(res => {
+    refs.select.style.display = 'block';
     refs.loader.classList.remove('visible');
     markUpOption(res);
     selectedBreed = res;
