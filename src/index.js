@@ -40,7 +40,10 @@ function changeHandler() {
       refs.loader.classList.remove('visible');
       markUpForBreed(...res);
     })
-    .catch(onError);
+    .catch(() => {
+      refs.catInfo.innerHTML = '';
+      onError();
+    });
 }
 
 function markUpForBreed(data) {
